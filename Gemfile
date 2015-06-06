@@ -21,6 +21,7 @@ gem 'sendgrid'
 gem 'sucker_punch'
 gem 'therubyracer', :platform=>:ruby
 gem 'upmin-admin'
+gem 'figaro'
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
