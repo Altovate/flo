@@ -7,6 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
-admin.confirm!
 CreatePlanService.new.call
 puts 'CREATED PLANS'
