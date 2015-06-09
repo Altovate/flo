@@ -22,6 +22,7 @@ gem 'sucker_punch'
 gem 'therubyracer', :platform=>:ruby
 gem 'upmin-admin'
 gem 'figaro'
+gem 'ransack'
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
