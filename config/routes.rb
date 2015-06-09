@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contacts
   get "content/silver"
   get "content/gold"
   get "content/platinum"
