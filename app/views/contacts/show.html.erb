@@ -35,5 +35,10 @@
   <%= @contact.verified %>
 </p>
 
+<p>
+  <strong>Add to list:</strong>
+  <%= link_to "Select List", "#" %>
+</p>
+
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>
