@@ -1,11 +1,6 @@
 class Contact < ActiveRecord::Base
-  
-  def self.text_search(query)
-    if query.present?
-      where("first_name ilike :q or last_name ilike :q or title ilike :q or publication ilike :q", q: "%#{query}%")
-    else
-      # scoped
-    end
-  end
+  belongs_to :owner, :class_name => 'User'
+  belongs_to :user
+  has_and_belongs_to_many :lists
   
 end

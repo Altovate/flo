@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609144110) do
+ActiveRecord::Schema.define(version: 20150610180302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,19 @@ ActiveRecord::Schema.define(version: 20150609144110) do
     t.boolean  "verified"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "contacts_lists", force: :cascade do |t|
+    t.integer "contact_id"
+    t.integer "list_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "owner_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "payola_affiliates", force: :cascade do |t|
@@ -141,6 +154,19 @@ ActiveRecord::Schema.define(version: 20150609144110) do
     t.string   "stripe_id"
     t.string   "interval"
     t.integer  "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "static_pages", force: :cascade do |t|
+    t.string   "home"
+    t.string   "help"
+    t.string   "faqs"
+    t.string   "contact"
+    t.string   "terms"
+    t.string   "privacy"
+    t.string   "about"
+    t.string   "pricing"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
