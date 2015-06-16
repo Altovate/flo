@@ -7,3 +7,11 @@
 
 <%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>
+
+<h1>Contacts on "<%= @list.name %>" list</h1>
+
+<ul>
+  <% @list.contacts.each do |contact| %>
+    <li><%= link_to contact.first_name, contact_path(contact) %></li>
+  <% end %>
+</ul>

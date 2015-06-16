@@ -1,5 +1,8 @@
 class List < ActiveRecord::Base
-  belongs_to :owner, :class_name => 'User'
-  has_and_belongs_to_many :lists
- 
+  has_many :listings, :dependent => :destroy
+  has_many :contacts, :through => :listings
+
+  def to_s
+    name
+  end
 end

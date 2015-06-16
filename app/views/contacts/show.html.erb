@@ -17,10 +17,7 @@
                       <%= @contact.twitter %>
                     </p>
                     <p><strong>Tags: </strong>
-                        <span class="tags">html5</span> 
-                        <span class="tags">css3</span>
-                        <span class="tags">jquery</span>
-                        <span class="tags">bootstrap3</span>
+                    <p>Tags: <%= list_links(@contact.lists) %></p>
                     </p>
                 </div>             
                 <div class="col-xs-12 col-sm-4 text-center">
@@ -70,6 +67,13 @@
     	 </div>                 
 		</div>
 	</div>
-</div>
+</div>  
   <%= link_to 'Edit', edit_contact_path(@contact) %> |
   <%= link_to 'Back', contacts_path %>
+
+<p>
+  Lists:
+  <% @contact.lists.each do |lists| %>
+    <%= link_to list.name, list_path(list) %>
+  <% end %>
+</p>
