@@ -41,7 +41,7 @@
   </div>
   <p>
     <%= f.label :list_list %><br />
-    <%= f.text_field :list_list %>
+    <%= f.collection_select :lists, @lists, :id, :name, include_blank: true %>
   </p>
   <div class="actions">
     <%= f.submit %>

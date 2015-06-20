@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :lists
   resources :static_pages
   get 'pricing' => 'static_pages#pricing'
   resources :contacts
@@ -15,4 +14,8 @@ Rails.application.routes.draw do
     put 'change_plan', :to => 'registrations#change_plan'
   end
   resources :users
+  
+  resources :lists do
+    resources :contacts
+  end
 end

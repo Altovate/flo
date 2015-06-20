@@ -16,16 +16,19 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   def new
     @contact = Contact.new
+    @lists = List.all
   end
 
   # GET /contacts/1/edit
   def edit
+    @lists = List.all
   end
 
   # POST /contacts
   # POST /contacts.json
   def create
     @contact = Contact.new(contact_params)
+    @lists = List.all
 
     respond_to do |format|
       if @contact.save
@@ -66,10 +69,6 @@ class ContactsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_contact
       @contact = Contact.find(params[:id])
-    end
-  
-    def lists
-      @lists = List.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
