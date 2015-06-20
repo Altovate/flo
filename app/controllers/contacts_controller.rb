@@ -67,6 +67,10 @@ class ContactsController < ApplicationController
     def set_contact
       @contact = Contact.find(params[:id])
     end
+  
+    def lists
+      @lists = List.find(params[:id])
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params

@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
   belongs_to :plan
   validates_associated :plan
   has_many :contacts, :foreign_key => 'owner_id'
-  has_many :lists, :foreign_key => 'owner_id'
-
+  has_many :lists, :foreign_key => 'owner_id' 
+  
   def set_default_role
     self.role ||= :user
   end
@@ -37,5 +37,4 @@ class User < ActiveRecord::Base
     })
     Rails.logger.info("Subscribed #{self.email} to MailChimp") if result
   end
-
 end
