@@ -1478,10 +1478,10 @@ a.bg-warning:hover {
   background-color: #e76b00;
 }
 .bg-danger {
-  background-color: #ff4136;
+  background-color: #fd5c63;
 }
 a.bg-danger:hover {
-  background-color: #ff1103;
+  background-color: #ff333c;
 }
 .page-header {
   padding-bottom: 9px;
@@ -3348,8 +3348,8 @@ fieldset[disabled] .btn-warning.active {
 }
 .btn-danger {
   color: #ffffff;
-  background-color: #ff4136;
-  border-color: #ff291c;
+  background-color: #fd5c63;
+  border-color: #fd5c63;
 }
 .btn-danger:hover,
 .btn-danger:focus,
@@ -3358,7 +3358,7 @@ fieldset[disabled] .btn-warning.active {
 .btn-danger.active,
 .open > .dropdown-toggle.btn-danger {
   color: #ffffff;
-  background-color: #ff1103;
+  background-color: #ff333c;
   border-color: #de0c00;
 }
 .btn-danger:active,

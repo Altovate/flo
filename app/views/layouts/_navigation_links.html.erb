@@ -1,16 +1,31 @@
 <%# add navigation links to this file %>
 <% if user_signed_in? %>
-  <li><%= link_to 'Contacts', contacts_path %></li>
-  <li><%= link_to 'Lists', lists_path %></li>  
-  <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-  <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+  <ul class="nav navbar-nav">  
+    <li><%= link_to 'Contacts', contacts_path %></li>
+    <li><%= link_to 'Lists', lists_path %></li> 
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><%= link_to 'Edit account', edit_user_registration_path %></li>
+    <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+  </ul>
 <% else %>
-  <li><%= link_to 'Sign in', new_user_session_path %></li>
-  <li><%= link_to 'Sign up', new_user_registration_path, data: { no_turbolink: true } %></li>
+  <ul class="nav navbar-nav">  
+    <li><%= link_to 'About', pricing_path %></li>
+    <li><%= link_to 'Features', pricing_path %></li> 
+    <li><%= link_to 'Pricing', pricing_path %></li> 
+    <li><%= link_to 'Blog', pricing_path %></li> 
+    <li><%= link_to 'More', pricing_path %></li> 
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><%= link_to 'Sign in', new_user_session_path %></li>
+    <li><button type="button" class="btn btn-danger navbar-btn"><%= link_to 'Sign Up Free', new_user_registration_path, data: { no_turbolink: true } %></button></li>
+  </ul>
 <% end %>
 <% if user_signed_in? %>
   <% if current_user.try(:admin?) %>
-    <li><%= link_to 'Admin', '/admin' %></li>
-    <li><%= link_to 'Users', users_path %></li>
+    <ul class="nav navbar-nav">      
+      <li><%= link_to 'Admin', '/admin' %></li>
+      <li><%= link_to 'Users', users_path %></li>
+    </ul>
   <% end %>
 <% end %>
