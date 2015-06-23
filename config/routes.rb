@@ -12,10 +12,17 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => 'registrations' }
   devise_scope :user do
     put 'change_plan', :to => 'registrations#change_plan'
-  end
-  resources :users
-  
+  end  
   resources :lists do
     resources :contacts
   end
+  
+  resources :users
+  resources :contacts do
+    member do
+      get :listeds, :listers
+    end
+  end
+  
+  resources :listings,       only: [:create, :destroy]
 end

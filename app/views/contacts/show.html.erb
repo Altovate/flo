@@ -70,10 +70,3 @@
 </div>  
   <%= link_to 'Edit', edit_contact_path(@contact) %> |
   <%= link_to 'Back', contacts_path %>
-
-<p>
-  Lists:
-  <% @contact.lists.each do |lists| %>
-    <%= link_to list.name, list_path(list) %>
-  <% end %>
-</p>

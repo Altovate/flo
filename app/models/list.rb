@@ -1,8 +1,4 @@
 class List < ActiveRecord::Base
-  belongs_to :owner, :class_name => 'User'
-  has_and_belongs_to_many :contacts
-  
-  def to_s
-    name
-  end
+  has_many :listings
+  has_many :contacts, through: :listings
 end

@@ -8,7 +8,6 @@ class CreateContacts < ActiveRecord::Migration
       t.string :email
       t.string :twitter
       t.boolean :verified
-      t.references :owner
       t.references :user
 
       t.timestamps null: false

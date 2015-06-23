@@ -10,13 +10,12 @@ namespace :csvimport do
     CSV.foreach(csv_file_path) do |row|
 
       p = Contact.create!({
-        :first_name => row[0],
-        :last_name => row[1],
-        :title => row[2],
-        :publication => row[3],
-        :email => row[4],
-        :twitter => row[5],
-        :verified => row[6],
+        :name => row[0],
+        :title => row[1],
+        :publication => row[2],
+        :email => row[3],
+        :twitter => row[4],
+        :verified => row[5],
         }
       )
 

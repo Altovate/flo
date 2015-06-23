@@ -39,10 +39,10 @@
     <%= f.label :verified %><br>
     <%= f.check_box :verified %>
   </div>
-  <p>
-    <%= f.label :list_list %><br />
+  <div class="field">
+    <%= f.label :list %><br>
     <%= f.collection_select :lists, @lists, :id, :name, include_blank: true %>
-  </p>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

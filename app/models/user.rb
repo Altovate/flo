@@ -6,8 +6,9 @@ class User < ActiveRecord::Base
 
   belongs_to :plan
   validates_associated :plan
-  has_many :contacts, :foreign_key => 'owner_id'
-  has_many :lists, :foreign_key => 'owner_id' 
+  has_many :active_listings, class_name:  "Listing",
+                                  foreign_key: "lister_id",
+                                  dependent:   :destroy
   
   def set_default_role
     self.role ||= :user
