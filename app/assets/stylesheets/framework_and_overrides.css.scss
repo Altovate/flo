@@ -12,6 +12,10 @@ img {
   font-size: inherit;
   }
 
+.navbar .nav > li > a {
+      padding:15px 10px 15px
+    }
+
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
 // to make views framework-neutral
@@ -1478,10 +1482,10 @@ a.bg-warning:hover {
   background-color: #e76b00;
 }
 .bg-danger {
-  background-color: #fd5c63;
+  background-color: #ff4136;
 }
 a.bg-danger:hover {
-  background-color: #ff333c;
+  background-color: #ff1103;
 }
 .page-header {
   padding-bottom: 9px;
@@ -3348,8 +3352,8 @@ fieldset[disabled] .btn-warning.active {
 }
 .btn-danger {
   color: #ffffff;
-  background-color: #fd5c63;
-  border-color: #fd5c63;
+  background-color: #ff4136;
+  border-color: #ff291c;
 }
 .btn-danger:hover,
 .btn-danger:focus,
@@ -3358,7 +3362,7 @@ fieldset[disabled] .btn-warning.active {
 .btn-danger.active,
 .open > .dropdown-toggle.btn-danger {
   color: #ffffff;
-  background-color: #ff333c;
+  background-color: #ff1103;
   border-color: #de0c00;
 }
 .btn-danger:active,
