@@ -23,6 +23,7 @@ gem 'therubyracer', :platform=>:ruby
 gem 'upmin-admin'
 gem 'figaro'
 gem 'ransack'
+gem 'rails_12factor'
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
