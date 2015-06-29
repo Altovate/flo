@@ -16,13 +16,6 @@ Rails.application.routes.draw do
   resources :lists do
     resources :contacts
   end
-  
   resources :users
-  resources :contacts do
-    member do
-      get :listeds, :listers
-    end
-  end
-  
-  resources :listings,       only: [:create, :destroy]
+  resources :listings
 end

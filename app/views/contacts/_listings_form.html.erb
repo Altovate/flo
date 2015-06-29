@@ -1,0 +1,5 @@
+<%= form_tag listings_path do %>
+  <%= hidden_field_tag :contact_id, @contact.id %>
+  <%= select_tag :list_id, options_from_collection_for_select(List.all, :id, :name) %>
+  <%= submit_tag "Add to List" %>
+<% end %>

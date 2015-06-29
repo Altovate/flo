@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
                                   foreign_key: "lister_id",
                                   dependent:   :destroy
   
+  has_many :contacts, :foreign_key => 'owner_id'
+  has_many :lists, :foreign_key => 'owner_id'
+  
   def set_default_role
     self.role ||= :user
   end
