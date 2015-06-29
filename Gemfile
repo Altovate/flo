@@ -24,6 +24,7 @@ gem 'upmin-admin'
 gem 'figaro'
 gem 'ransack'
 gem 'rails_12factor'
+gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
