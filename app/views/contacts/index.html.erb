@@ -15,10 +15,8 @@
       <th>Last name</th>
       <th>Title</th>
       <th>Publication</th>
-      <th>Email</th>
-      <th>Twitter</th>
-      <th>Verified</th>
-      <th>Lists</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -30,22 +28,8 @@
         <td><%= contact.last_name %></td>
         <td><%= contact.title %></td>
         <td><%= contact.publication %></td>
-        <td><%= contact.email %></td>
-        <td><%= contact.twitter %></td>
-        <td><%= contact.verified %></td>
-        <td>
-          <div class="btn-group dropdown btn-group-justified">
-                      <button type="button" style="width:85%;" class="btn btn-primary dropdown-toggle">Add To List</button>
-                      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown </span>
-                      </button>
-                      <ul class="dropdown-menu text-left" role="menu">
-                        <li><a href="#">  List 1  </a></li>
-                        <li><a href="#">  List 2  </a></li>
-                      </ul>
-          </div>
-        </td>
+        <td><%= link_to 'View Contact', contact, class: "btn btn-primary" %></td>
+        <td><%= link_to 'Add To List', contact, class: "btn btn-info" %></td>
       </tr>
     
     <% end %>

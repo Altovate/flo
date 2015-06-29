@@ -7,8 +7,7 @@ class ListingsController < ApplicationController
     if @contact.save
       redirect_to @list, notice: 'Contact added to list.'
     else
-      @contact = Contact.show
-      render 'new'
+      redirect_to @contact, notice: 'Unable to add contact to list.'
     end
   end
 
