@@ -20,6 +20,7 @@ SitemapGenerator::Sitemap.create do
   Contact.find_each do |contact|
     add contact_path(contact), :lastmod => contact.updated_at
   end
+  
   # Put links creation logic here.
   #
   # The root path '/' and sitemap index file are added automatically for you.
