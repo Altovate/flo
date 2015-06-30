@@ -128,6 +128,7 @@ GEM
       rspec (>= 2.99.0, < 4.0)
     haml (4.0.6)
       tilt
+    high_voltage (2.3.0)
     hitimes (1.2.2)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
@@ -353,6 +354,7 @@ DEPENDENCIES
   guard-bundler
   guard-rails
   guard-rspec
+  high_voltage (~> 2.3.0)
   hub
   jbuilder (~> 2.0)
   jquery-rails

@@ -26,6 +26,7 @@ gem 'ransack'
 gem 'rails_12factor'
 gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
 gem 'sitemap_generator'
+gem 'high_voltage', '~> 2.3.0'
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'

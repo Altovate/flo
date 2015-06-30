@@ -9,7 +9,7 @@
     analytics.page()
     }}();
     </script>
-    <title><%= content_for?(:title) ? yield(:title) : "Media Database" %></title>
+    <title><%= yield(:page_title) %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Media Database" %>">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
