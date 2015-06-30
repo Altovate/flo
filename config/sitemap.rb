@@ -2,12 +2,23 @@
 SitemapGenerator::Sitemap.default_host = "http://www.mediadatabase.co"
 SitemapGenerator::Sitemap.create_index = true
 SitemapGenerator::Sitemap.create do
+  
   add '/pricing'
+  add '/about'
+  add '/blog'
+  add '/contact'
+  add '/faqs'
+  add '/features'
+  add '/for-agencies'
+  add '/for-charities'
+  add '/for-freelancers'
+  add '/for-startups'
+  add '/help'
+  add '/privacy'
+  add '/terms'
+
   Contact.find_each do |contact|
     add contact_path(contact), :lastmod => contact.updated_at
-  end
-  HighVoltage.page_ids.each do |page|
-    add page, changefreq: 'weekly'
   end
   # Put links creation logic here.
   #
