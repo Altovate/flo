@@ -25,13 +25,13 @@
     
     <% @list.contacts.each do |contact| %>
       <tr>
-        <td><%= link_to Contact.find_by(id: contact).first_name, contact_path %></td>
-        <td><%= link_to Contact.find_by(id: contact).last_name, contact_path %></td>
-        <td><%= link_to Contact.find_by(id: contact).title, contact_path %></td>
-        <td><%= link_to Contact.find_by(id: contact).publication, contact_path %></td>
-        <td><%= link_to Contact.find_by(id: contact).email, contact_path %></td>
-        <td><%= link_to Contact.find_by(id: contact).twitter, contact_path %></td>
-        <td><%= link_to Contact.find_by(id: contact).verified, contact_path %></td>
+        <td><%= Contact.find_by(id: contact).first_name %></td>
+        <td><%= Contact.find_by(id: contact).last_name %></td>
+        <td><%= Contact.find_by(id: contact).title %></td>
+        <td><%= Contact.find_by(id: contact).publication %></td>
+        <td><%= Contact.find_by(id: contact).phone %></td>
+        <td><%= Contact.find_by(id: contact).email %></td>
+        <td><%= Contact.find_by(id: contact).twitter %></td>
         <td>
           <div class="btn-group dropdown">
                       <button type="button" style="width:100%;" class="btn btn-primary dropdown-toggle"><span class="fa fa-gear"></span> Remove From List </button> 

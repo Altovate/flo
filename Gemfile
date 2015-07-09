@@ -20,13 +20,14 @@ gem 'puma'
 gem 'sendgrid'
 gem 'sucker_punch'
 gem 'therubyracer', :platform=>:ruby
-gem 'upmin-admin'
 gem 'figaro'
 gem 'ransack'
 gem 'rails_12factor'
 gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
 gem 'sitemap_generator'
 gem 'high_voltage', '~> 2.3.0'
+gem 'upmin-admin'
+
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'

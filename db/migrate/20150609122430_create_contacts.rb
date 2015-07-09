@@ -5,6 +5,7 @@ class CreateContacts < ActiveRecord::Migration
       t.string :last_name
       t.string :title
       t.string :publication
+      t.string :phone
       t.string :email
       t.string :twitter
       t.boolean :verified

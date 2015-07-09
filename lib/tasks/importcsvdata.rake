@@ -14,9 +14,10 @@ namespace :csvimport do
         :last_name => row[1],
         :title => row[2],
         :publication => row[3],
-        :email => row[4],
-        :twitter => row[5],
-        :verified => row[6],
+        :phone => row[4],
+        :email => row[5],
+        :twitter => row[6],
+        :verified => row[7],
         }
       )
 

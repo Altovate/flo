@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150616043140) do
     t.string   "last_name"
     t.string   "title"
     t.string   "publication"
+    t.string   "phone"
     t.string   "email"
     t.string   "twitter"
     t.boolean  "verified"
