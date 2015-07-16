@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
   expose(:lists)
   expose(:list, attributes: :list_params)
-  expose(:contacts)
+  expose(:contacts, ancestor: :list)
 
   # GET /lists
   # GET /lists.json
@@ -57,16 +57,6 @@ class ListsController < ApplicationController
       format.html { redirect_to lists_url, notice: 'List was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-  def manage_contacts
-    self.contacts = contacts - list.contacts
-  end
-
-  def add_contacts
-    contacts = Contact.where(id: params[:contact_ids])
-    list.contacts.push(contacts)
-    redirect_to list
   end
 
   private

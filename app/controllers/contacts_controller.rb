@@ -4,6 +4,7 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
+    @lists = List.all
     @q = Contact.ransack(params[:q])
     @contacts = @q.result(distinct: true)
   end

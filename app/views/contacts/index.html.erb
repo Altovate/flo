@@ -7,10 +7,11 @@
   <%= f.submit %>
 
 <% end %></br>
-
+<%= form_tag add_to_list_contacts_path, method: :post do%>
 <table class="table table-striped">
   <thead>
     <tr>
+      <th><%= check_box_tag 'select-all' %></th>
       <th>Name</th>
       <th>Last name</th>
       <th>Title</th>
@@ -23,6 +24,7 @@
   <tbody>
     <% @contacts.each do |contact| %>
       <tr>
+        <td><%= check_box_tag 'contact_ids[]', contact.id, false, class: 'contact-checkbox' %></td>
         <td><%= contact.first_name %></td>
         <td><%= contact.last_name %></td>
         <td><%= contact.title %></td>
@@ -34,5 +36,7 @@
   </tbody>
 </table>
 <br>
-
+  <%= select_tag 'list_id', options_from_collection_for_select(@lists, :id, :name) %>
+  <%= submit_tag 'Add Contacts' %>
+<% end %>
 <%= link_to 'New Contact', new_contact_path %>

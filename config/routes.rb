@@ -15,8 +15,10 @@ Rails.application.routes.draw do
   end
   resources :lists do
     resources :contacts, only: :index, controller: 'list_contacts'
-    get 'manage_contacts'
-    post 'add_contacts'
+  end
+
+  resources :contacts, only: [], controller: 'list_contacts' do
+    post 'add_to_list', on: :collection
   end
   resources :users
   resources :listings
