@@ -3,6 +3,8 @@ class ListContactsController < ApplicationController
   expose(:contacts, ancestor: :list)
 
   def index
-    send_data contacts.to_csv
+    respond_to do |format|
+      format.csv { send_data contacts.to_csv }
+    end
   end
 end
