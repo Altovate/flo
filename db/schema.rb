@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616043140) do
+ActiveRecord::Schema.define(version: 20150716165052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20150616043140) do
     t.integer "contact_id"
     t.integer "list_id"
   end
+
+  add_index "contacts_lists", ["contact_id", "list_id"], name: "index_contacts_lists_on_contact_id_and_list_id", unique: true, using: :btree
 
   create_table "listings", force: :cascade do |t|
     t.integer  "list_id"
