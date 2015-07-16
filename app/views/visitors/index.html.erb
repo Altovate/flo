@@ -3,7 +3,6 @@
   <% if current_user.admin? %>
     <h3>Admin</h3>
     <p><%= link_to 'User count:', users_path %> <%= User.count %></p>
-   <% else %>
     <h3>You've signed up. Download a free book.</h3>
     <%= link_to 'Download PDF', products_path('product.pdf'), class: 'btn btn-success btn-large' %>
     <div class="container">
@@ -40,6 +39,18 @@
       <p align="center" class="small"><i>No Downloads. No Hassle.</i></p>
     </div>
   </div>
+        &nbsp;
+        <div class="row">
+          <h4 align="center">Search over 10,000 journalists, bloggers and influencers from thousands of publications.</h4>
+            </br>
+            <div align="center">
+              <%= form_tag(contacts_path, :method => "get", id: "search-form") do %>
+                <%= text_field_tag :search, params[:search], placeholder: "Search contacts" %>
+                <%= submit_tag "Search" %>
+              <% end %>
+            </div>
+        </div>
+          
      <div class="row">
       <p><img src="http://www.emplify.io/static/images/design/emplify-design-over-time.png"></p>
     </div>
