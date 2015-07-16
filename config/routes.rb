@@ -12,13 +12,15 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => 'registrations' }
   devise_scope :user do
     put 'change_plan', :to => 'registrations#change_plan'
-  end  
+  end
   resources :lists do
-    resources :contacts
+    resources :contacts, only: :index, controller: 'list_contacts'
+    get 'manage_contacts'
+    post 'add_contacts'
   end
   resources :users
   resources :listings
-  
+
   get 'pages/about' => 'high_voltage/pages#show', id: 'about'
   get 'pages/blog' => 'high_voltage/pages#show', id: 'blog'
   get 'pages/contact' => 'high_voltage/pages#show', id: 'contact'
@@ -31,5 +33,4 @@ Rails.application.routes.draw do
   get 'pages/help' => 'high_voltage/pages#show', id: 'help'
   get 'pages/privacy' => 'high_voltage/pages#show', id: 'privacy'
   get 'pages/terms' => 'high_voltage/pages#show', id: 'terms'
-
 end
