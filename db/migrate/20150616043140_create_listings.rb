@@ -1,6 +1,6 @@
 class CreateListings < ActiveRecord::Migration
   def change
-    create_table :listings
+    create_table :listings do |t|
       t.references :contact
       t.references :list
 
