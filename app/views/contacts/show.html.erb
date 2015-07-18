@@ -1,4 +1,5 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+<% if user_signed_in? %>
 <div class="container">
 	<div class="row">
                     <h2><%= @contact.first_name %> <%= @contact.last_name %></h2>
@@ -16,19 +17,33 @@
                       <strong>Twitter:</strong>
                       <%= @contact.twitter %>
                     </p>
-                    <p><strong>Tags: </strong>
-                    <p>Lists: <%= list_links(@contact.lists) %></p>
-                    </p>
                 </div>
 </div>
 
 <%= render "listings_form" %>
-
-<% if user_signed_in? %>
   <% if current_user.admin? %>
   <%= link_to 'Edit', edit_contact_path(@contact) %> |
   <%= link_to 'Back', contacts_path %>
 <% else %>
 <% end %>
 <% else %>
+<div class="container">
+	<div class="row">
+                    <h2><%= @contact.first_name %> <%= @contact.last_name %></h2>
+                    <h4><%= @contact.title %>, <%= @contact.publication %></h4>
+                    <p>
+                      <strong>Phone:</strong>
+                      <a href="/">Sign in to view</a>
+                    </p>              
+                    <p>
+                      <strong>Email:</strong>
+                      <a href="/">Sign in to view</a>
+                    </p>
+
+                    <p>
+                      <strong>Twitter:</strong>
+                      <%= @contact.twitter %>
+                    </p>
+                </div>
+</div>
 <% end %>
