@@ -5,26 +5,6 @@
     <p><%= link_to 'User count:', users_path %> <%= User.count %></p>
     <h3>You've signed up. Download a free book.</h3>
     <%= link_to 'Download PDF', products_path('product.pdf'), class: 'btn btn-success btn-large' %>
-    <div class="container">
-        <div class="row" align="center">
-          <div class="col-lg-3">
-          </div>
-          <div class="col-lg-6">
-            &nbsp;
-            &nbsp;
-            <h3>Search xx contacts from xx publications</h3>
-            </br>
-            <div>
-              <%= form_tag(contacts_path, :method => "get", id: "search-form") do %>
-                <%= text_field_tag :search, params[:search], placeholder: "Search contacts" %>
-                <%= submit_tag "Search" %>
-              <% end %>
-            </div>
-          </div>
-            <div class="col-lg-3">
-            </div>
-        </div>
-     </div>
   <% end %>
 <div class="container">
         <div class="row" align="center">
