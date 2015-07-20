@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+  before_action :authenticate_user!
+  
   expose(:lists)
   expose(:list, attributes: :list_params)
   expose(:contacts, ancestor: :list)
