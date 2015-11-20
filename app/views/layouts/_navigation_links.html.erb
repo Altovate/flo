@@ -9,13 +9,6 @@
     <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
   </ul>
 <% else %>
-  <ul class="nav navbar-nav">  
-    <li><%= link_to 'About', page_path('about') %></li>
-    <li><%= link_to 'Features', page_path('features') %></li> 
-    <li><%= link_to 'Pricing', pricing_path %></li> 
-    <li><%= link_to 'Blog', page_path('blog') %></li>  
-    <li><%= link_to 'More', page_path('about') %>
-  </ul>
   <ul class="nav navbar-nav navbar-right">
     <li><%= link_to 'Sign in', new_user_session_path %></li>
     <li><button type="button" class="btn btn-danger navbar-btn"><%= link_to 'Sign Up Free', new_user_registration_path, data: { no_turbolink: true } %></button></li>
