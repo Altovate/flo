@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get "content/platinum"
   mount Payola::Engine => '/payola', as: :payola
   mount Upmin::Engine => '/admin'
-  root to: 'visitors#index'
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
+  # root to: "devise/sessions#new"
   get 'products/:id', to: 'products#show', :as => :products
   devise_for :users, :controllers => { :registrations => 'registrations' }
   devise_scope :user do
