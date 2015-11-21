@@ -1,9 +1,15 @@
-<%= link_to 'Edit List Name', edit_list_path(list) %> |
-<%= link_to 'Back', lists_path %>
+<br>
+<br>
 
 <h1><%= list.name %> list</h1>
 
 <%= link_to "Download List", list_contacts_path(list, format: :csv), class: "btn btn-success" %>
+<%= link_to 'Edit List Name', edit_list_path(list), class: "btn btn-primary" %>
+<%= link_to 'View All Lists', lists_path, class: "btn btn-warning" %>
+<%= link_to 'New List', new_list_path, class: "btn btn-danger"  %>
+
+<br>
+<br>
 
 <table class='table table-striped'>
   <thead>
@@ -12,9 +18,9 @@
       <th>Last name</th>
       <th>Title</th>
       <th>Publication</th>
+      <th>Phone</th>
       <th>Email</th>
       <th>Twitter</th>
-      <th>Verified</th>
       <th>Lists</th>
     </tr>
   </thead>

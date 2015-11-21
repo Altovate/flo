@@ -6,7 +6,8 @@
 
   <%= f.submit %>
 
-<% end %></br>
+<% end %>
+<br>
 <%= form_tag add_to_list_contacts_path, method: :post do%>
 <table class="table table-striped">
   <thead>
@@ -37,6 +38,10 @@
 </table>
 <br>
   <%= select_tag 'list_id', options_from_collection_for_select(@lists, :id, :name) %>
-  <%= submit_tag 'Add Contacts' %>
+<%= submit_tag 'Add selected contacts to list', class: "btn btn-primary" %>
 <% end %>
-<%= link_to 'New Contact', new_contact_path %>
+
+<br>
+<br>
+
+<%= link_to 'Add new contact', new_contact_path, class: "btn btn-success" %>

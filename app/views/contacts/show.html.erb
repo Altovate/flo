@@ -2,6 +2,8 @@
 <% if user_signed_in? %>
 <div class="container">
 	<div class="row">
+    </br>
+                    <h3>Say hello to</h3>
                     <h2><%= @contact.first_name %> <%= @contact.last_name %></h2>
                     <h4><%= @contact.title %>, <%= @contact.publication %></h4>
                     <p>
@@ -20,7 +22,10 @@
                 </div>
 </div>
 
-<%= render "listings_form" %>
+<%= render "listings_form" %></br>
+
+<%= link_to 'New List', new_list_path, class: "btn btn-danger" %></br>
+
   <% if current_user.admin? %>
   <%= link_to 'Edit', edit_contact_path(@contact) %> |
   <%= link_to 'Back', contacts_path %>
