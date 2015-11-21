@@ -37,8 +37,9 @@
   </tbody>
 </table>
 <br>
-  <%= select_tag 'list_id', options_from_collection_for_select(@lists, :id, :name) %>
-<%= submit_tag 'Add selected contacts to list', class: "btn btn-primary" %>
+<h2>Add selected contacts to list:</h2>
+  <%= select_tag 'list_id', options_from_collection_for_select(@lists, :id, :name), class: "form-control input-lg" %>
+  <%= submit_tag 'Add to list', class: "btn btn-primary" %>
 <% end %>
 
 <br>
