@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
     @lists = List.all
     @q = Contact.ransack(params[:q])
     @contacts = @q.result(distinct: true)
+    @contacts = Contact.all.paginate(page: params[:page], per_page: 25)
   end
 
   # GET /contacts/1

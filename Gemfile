@@ -24,6 +24,8 @@ gem 'sitemap_generator'
 gem 'high_voltage', '~> 2.3.0'
 gem 'upmin-admin'
 gem 'decent_exposure'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 
 group :development, :test do
   gem 'byebug'

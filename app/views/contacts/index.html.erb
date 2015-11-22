@@ -1,5 +1,6 @@
 <h1>Listing Contacts</h1>
-
+<br>
+<h4>Search contacts:</h4>
 <%= search_form_for @q do |f| %>
 
   <%= f.search_field :first_name_or_last_name_or_title_or_publication_cont %>
@@ -9,6 +10,15 @@
 <% end %>
 <br>
 <%= form_tag add_to_list_contacts_path, method: :post do%>
+
+<h4>Add selected contacts to list:</h4>
+  <%= select_tag 'list_id', options_from_collection_for_select(@lists, :id, :name), class: "form-control input-md" %>
+<br>
+  <%= submit_tag 'Add to list', class: "btn btn-primary" %>  <%= link_to 'Add new contact', new_contact_path, class: "btn btn-success" %>  <%= link_to 'Import Contacts', new_contact_path, class: "btn btn-warning" %>  <%= link_to 'Request A Contact', new_contact_path, class: "btn btn-danger" %>
+<% end %>
+<br>
+<%= will_paginate @contacts, renderer: BootstrapPagination::Rails %>
+<br>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -36,13 +46,5 @@
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @contacts, renderer: BootstrapPagination::Rails %>
 <br>
-<h2>Add selected contacts to list:</h2>
-  <%= select_tag 'list_id', options_from_collection_for_select(@lists, :id, :name), class: "form-control input-lg" %>
-  <%= submit_tag 'Add to list', class: "btn btn-primary" %>
-<% end %>
-
-<br>
-<br>
-
-<%= link_to 'Add new contact', new_contact_path, class: "btn btn-success" %>
