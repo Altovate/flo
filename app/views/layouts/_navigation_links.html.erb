@@ -6,10 +6,6 @@
     <li><%= link_to 'Request', new_contact_path %></li>
     <li><%= link_to 'Lists', lists_path %></li> 
     <li><%= link_to 'Settings', edit_user_registration_path %></li>
-    <%= form_tag(contacts_path, method: 'get', class: 'navbar-form navbar-right') do %>
-      <%= search_field_tag 'search', nil, class: 'form-control', placeholder: 'Search contacts'  %>
-      <%= submit_tag "Submit", class: 'btn btn-default', :name => nil %>
-    <% end %>
   </ul>
   <ul class="nav navbar-nav navbar-right">
     <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>

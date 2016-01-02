@@ -1,28 +1,18 @@
-<h1>Listing Contacts</h1>
-<br>
-<h4>Search contacts:</h4>
-    <%= form_tag(contacts_path, method: 'get') do %>
-      <%= search_field_tag 'search', nil, class: 'form-control', placeholder: 'Search contacts'  %>
-      <%= submit_tag "Submit", class: 'btn btn-default', :name => nil %>
-    <% end %>
-<br>
-<%= form_tag add_to_list_contacts_path, method: :post do%>
-
-<h4>Add selected contacts to list:</h4>
-  <%= select_tag 'list_id', options_from_collection_for_select(@lists, :id, :name), class: "form-control input-md" %>
-<br>
-  <%= submit_tag 'Add to list', class: "btn btn-primary" %>  <%= link_to 'Add new contact', new_contact_path, class: "btn btn-success" %>  <%= link_to 'Import Contacts', new_contact_path, class: "btn btn-warning" %>  <%= link_to 'Request A Contact', new_contact_path, class: "btn btn-danger" %>
+<h1>Find Contacts</h1>
+<%= search_form_for @search do |f| %>
+<%= f.search_field :first_name_or_last_name_or_title_or_publication_cont, placeholder: 'Search by name, title or publication', class: 'form-control' %>
+   <%= f.submit nil, :class => 'btn btn-primary' %>
 <% end %>
 <br>
-<br>
+<%= form_tag add_to_list_contacts_path, method: :post do %>
 <table class="table table-striped">
   <thead>
     <tr>
       <th><%= check_box_tag 'select-all' %></th>
-      <th>Name</th>
-      <th>Last name</th>
-      <th>Title</th>
-      <th>Publication</th>
+      <th><%= sort_link(@search, :first_name, "First Name") %></th>
+      <th><%= sort_link(@search, :last_name, "Last Name") %></th>
+      <th><%= sort_link(@search, :title, "Title") %></th>
+      <th><%= sort_link(@search, :name, "Publication") %></th>
       <th></th>
       <th></th>
     </tr>
@@ -42,5 +32,9 @@
     <% end %>
   </tbody>
 </table>
+<h4>Add selected contacts to list:</h4>
+<%= select_tag 'list_id', options_from_collection_for_select(@lists, :id, :name), class: 'form-control' %>
+<%= submit_tag 'Add Contacts', :class => 'btn btn-primary' %>
+<% end %>
 <%= will_paginate @contacts, renderer: BootstrapPagination::Rails %>
 <br>
