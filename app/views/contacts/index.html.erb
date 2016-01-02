@@ -1,13 +1,10 @@
 <h1>Listing Contacts</h1>
 <br>
 <h4>Search contacts:</h4>
-<%= search_form_for @q do |f| %>
-
-  <%= f.search_field :first_name_or_last_name_or_title_or_publication_cont %>
-
-  <%= f.submit %>
-
-<% end %>
+    <%= form_tag(contacts_path, method: 'get') do %>
+      <%= search_field_tag 'search', nil, class: 'form-control', placeholder: 'Search contacts'  %>
+      <%= submit_tag "Submit", class: 'btn btn-default', :name => nil %>
+    <% end %>
 <br>
 <%= form_tag add_to_list_contacts_path, method: :post do%>
 

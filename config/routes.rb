@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :static_pages
   get 'pricing' => 'static_pages#pricing'
+  get 'search' => 'contacts#search'
   resources :contacts
   get "content/silver"
   get "content/gold"
