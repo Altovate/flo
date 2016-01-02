@@ -9,6 +9,13 @@ class ContactsController < ApplicationController
     @search = Contact.search(params[:q])
     @contacts = @search.result(distinct: true).paginate(page: params[:page], per_page: 25)
   end
+  
+  def search
+    @lists = List.all
+    @search = Contact.search(params[:q])
+    @contacts = @search.result(distinct: true).paginate(page: params[:page], per_page: 25)
+    render template: 'contacts/index'
+  end
 
   # GET /contacts/1
   # GET /contacts/1.json

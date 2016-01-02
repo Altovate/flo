@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
     @list = List.find(params[:list_id])
     @contact.lists << @list
     if @contact.save
-      redirect_to @list, notice: 'Contact added to list.'
+      redirect_to @list, notice: 'Contact added to #{list.name} list.'
     else
       redirect_to @contact, notice: 'Unable to add contact to list.'
     end

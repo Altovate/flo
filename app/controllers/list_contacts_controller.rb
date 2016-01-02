@@ -11,6 +11,6 @@ class ListContactsController < ApplicationController
   def add_to_list
     contacts = Contact.where(id: params[:contact_ids])
     list.contacts.push contacts
-    redirect_to contacts_path, notice: "Contacts were successfully added to #{list.name} list."
+    redirect_to list, notice: "Contacts were successfully added to #{list.name} list."
   end
 end

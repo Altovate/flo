@@ -5,22 +5,23 @@
 <h3 align="center">All features included.</h3>
 
 <div class="authform">
+   
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form',
         :class => 'payola-onestep-subscription-form',
         'data-payola-base-path' => payola_path,
         'data-payola-plan-type' => resource.plan.plan_class,
         'data-payola-plan-id' => resource.plan.id}) do |f| %>
-    <h3>Sign up to <%= f.collection_select(:plan_id, Plan.all, :id, :name) %></h3>
-    <!-- <div>
+      <div>
       <br />
-        <span id="error_explanation" class="payola-payment-error"></span>
+      <span id="error_explanation" class="payola-payment-error"></span>
       <br />
       <br />
-    </div>
+    </div> 
+  <h3>Sign up</h3>
     <div class="form-group">
       <%= f.label 'Subscription plan' %>
       <%= f.collection_select(:plan_id, Plan.all, :id, :name) %>
-    </div> -->
+    </div>
     <div class="form-group">
       <%= f.label :email %>
       <%= f.email_field :email, :autofocus => true, class: 'form-control', data: { payola: 'email' }  %>
@@ -47,7 +48,6 @@
       <%= select_month nil, { use_two_digit_numbers: true}, { name: nil, data: { stripe: 'exp-month' } } %>
       <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, { name: nil, data: { stripe: 'exp-year' } } %>
     </div>
-    <%= f.submit 'Sign Up Free', :class => 'button right' %>
+    <%= f.submit 'Sign up', :class => 'button right' %>
   <% end %>
-  &nbsp;
 </div>

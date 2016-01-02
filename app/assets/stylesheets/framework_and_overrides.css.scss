@@ -85,6 +85,12 @@ section {
   @extend .btn-xs;
 }
 
+.table-responsive
+{
+    overflow-x: auto;
+}
+
+
 // Bootswatch theme
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
 /*!

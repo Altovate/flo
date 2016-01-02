@@ -23,5 +23,10 @@ class ApplicationController < ActionController::Base
         root_path
     end
   end
+  
+  def index
+    @search = Contact.search(params[:q])
+    @contacts = @search.result(distinct: true).paginate(page: params[:page], per_page: 25)
+  end
 
 end
