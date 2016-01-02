@@ -1,11 +1,14 @@
 <%# add navigation links to this file %>
 <% if user_signed_in? %>
-  <ul class="nav navbar-nav">  
+  <ul class="nav navbar-nav"> 
+    <li><%= link_to 'Search', contacts_path %></li>
     <li><%= link_to 'Contacts', contacts_path %></li>
     <li><%= link_to 'Lists', lists_path %></li> 
+    <li><%= link_to 'Add', new_contact_path %></li>
+    <li><%= link_to 'Request', new_contact_path %></li>
+    <li><%= link_to 'Settings', edit_user_registration_path %></li>
   </ul>
   <ul class="nav navbar-nav navbar-right">
-    <li><%= link_to 'Edit account', edit_user_registration_path %></li>
     <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
   </ul>
 <% else %>
