@@ -1,5 +1,5 @@
 class BlogController < ApplicationController
     def redirect
-        redirect_to "http://getinfluence.co/blog/"
+        redirect_to "http://getinfluence.co/"
     end
 end
