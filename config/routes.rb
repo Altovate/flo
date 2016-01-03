@@ -39,5 +39,4 @@ Rails.application.routes.draw do
   get 'pages/help' => 'high_voltage/pages#show', id: 'help'
   get 'pages/privacy' => 'high_voltage/pages#show', id: 'privacy'
   get 'pages/terms' => 'high_voltage/pages#show', id: 'terms'
-  get '/blog', to: 'blog#redirect'
 end
