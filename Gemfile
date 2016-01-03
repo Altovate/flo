@@ -26,7 +26,6 @@ gem 'upmin-admin'
 gem 'decent_exposure'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
-gem "rack-reverse-proxy", :require => "rack/reverse_proxy" 
 
 group :development, :test do
   gem 'byebug'
