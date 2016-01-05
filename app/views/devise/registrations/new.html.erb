@@ -1,7 +1,7 @@
 <% content_for :head do %>
   <%= render 'payola/transactions/stripe_header' %>
 <% end %>
-<h1 align="center"><b>Start your 30-day free trial</b></h1>
+<h1 align="center"><b>Start your free trial</b></h1>
 <h3 align="center">All features included.</h3>
 
 <div class="authform">
@@ -11,12 +11,7 @@
         'data-payola-base-path' => payola_path,
         'data-payola-plan-type' => resource.plan.plan_class,
         'data-payola-plan-id' => resource.plan.id}) do |f| %>
-      <div>
-      <br />
-      <span id="error_explanation" class="payola-payment-error"></span>
-      <br />
-      <br />
-    </div> 
+  <%= devise_error_messages! %>
   <h3>Sign up</h3>
     <div class="form-group">
       <%= f.label 'Subscription plan' %>
