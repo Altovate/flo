@@ -18,5 +18,11 @@ class CreatePlanService
       p.stripe_id = 'silver'
     end
     p3.save!(:validate => false)
+    p4 = Plan.where(name: 'Free').first_or_initialize do |p|
+      p.amount = 000
+      p.interval = 'month'
+      p.stripe_id = 'free'
+    end
+    p4.save!(:validate => false)
   end
 end
