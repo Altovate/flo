@@ -1,5 +1,7 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!
+  before_action :search
+
   
   expose(:lists)
   expose(:list, attributes: :list_params)
@@ -67,4 +69,11 @@ class ListsController < ApplicationController
   def list_params
     params.require(:list).permit(:name)
   end
+  
+  def search
+    if params[:search]
+      search_params = CGI::escapeHTML(params[:search]) 
+      redirect_to ("/contacts?utf8=%E2%9C%93&search=#{search_params}")
+    end
+  end  
 end

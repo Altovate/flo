@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :search
+  
   decent_configuration do
     strategy DecentExposure::StrongParametersStrategy
   end
@@ -28,5 +30,14 @@ class ApplicationController < ActionController::Base
     @search = Contact.search(params[:q])
     @contacts = @search.result(distinct: true).paginate(page: params[:page], per_page: 25)
   end
+  
+  private
+  
+  def search
+    if params[:search]
+      search_params = CGI::escapeHTML(params[:search]) 
+      redirect_to ("/contacts?utf8=%E2%9C%93&search=#{search_params}")
+    end
+  end  
 
 end

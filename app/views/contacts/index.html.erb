@@ -1,7 +1,10 @@
-<h1>Find Contacts</h1>
-<%= search_form_for @search do |f| %>
-<%= f.search_field :first_name_or_last_name_or_title_or_publication_cont, placeholder: 'Search by name, title or publication', class: 'form-control' %><%= f.submit nil, :class => 'btn btn-primary' %>
-<% end %>
+<div class="row">
+  <%= search_form_for @search do |f| %>
+  <h1>Search Contacts:</h1> 
+    <%= f.search_field :first_name_or_last_name_or_title_or_publication_cont, placeholder: 'Search by name, title or publication', class: 'form-control input-group' %>
+      <%= f.submit nil, :class => 'btn btn-default' %>
+  <% end %>
+</div>
 <br>
 <%= form_tag add_to_list_contacts_path, method: :post do %>
 <div class="table-responsive">
