@@ -5,7 +5,7 @@ require 'csv'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Reachscout
+module Influence
   class Application < Rails::Application
 
     config.generators do |g|
