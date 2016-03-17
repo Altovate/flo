@@ -1,5 +1,4 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-<% if user_signed_in? %>
 <div class="container">
 	<div class="row">
     </br>
@@ -26,12 +25,11 @@
 
 <%= link_to 'New List', new_list_path, class: "btn btn-danger" %></br>
 
-  <% if current_user.admin? %>
+<% if current_user.admin? %>
   <%= link_to 'Edit', edit_contact_path(@contact) %> |
   <%= link_to 'Back', contacts_path %>
 <% else %>
 <% end %>
-<% else %>
 <div class="container">
 	<div class="row">
                     <h2><%= @contact.first_name %> <%= @contact.last_name %></h2>
@@ -51,4 +49,3 @@
                     </p>
                 </div>
 </div>
-<% end %>
